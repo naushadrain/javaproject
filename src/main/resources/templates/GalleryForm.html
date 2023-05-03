@@ -1,0 +1,29 @@
+<html xmlns:th= "https://www.thymeleaf.org"> 
+<meta charset="ISO-8859-1">
+<title>gallery</title>
+</head>
+<body>
+  
+     <div th:insert="Header.html"></div>
+      
+      <div class="container">
+      
+      
+ <!-- <div class="card" style="width: 18rem;" th:each="imagName : ${imgNameList}">
+  <img class="card-img-top" th:src="@{'/images/'+${imagName}}" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">[[${imagName}]]</p>
+  </div>
+</div> -->
+	      <span  th:each="imagName : ${imgNameList}">
+	       <a th:href="@{'/images/'+${imagName}}" target="_blank">
+	       
+	         <img th:alt="${imagName}" th:src="@{'/images/'+${imagName}}" width="300px;" height="300px;">
+	      </a>  
+	     </span>
+   
+       
+     </div>
+
+</body>
+</html>
